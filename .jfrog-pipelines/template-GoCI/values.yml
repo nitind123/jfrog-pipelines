@@ -3,7 +3,7 @@
 namePrefix: go_sample
  
 ## The name of your Artifactory integration
-artIntegration: myArtIntegration
+artIntegration: myArtifactory
  
 ##### Artifactory Build Info
 ## set this to `true` to publish builds
@@ -22,8 +22,8 @@ artIntegration: myArtIntegration
  
 ##### Repository Details
 repo:
-  path: jfrog/jfrog-pipelines-templates
-  gitIntegration: myGitIntegration
+  path: jfrog/jfrog-pipelines
+  gitIntegration: myGithub
   branchPattern: "^main$"
  
 goConfig:
