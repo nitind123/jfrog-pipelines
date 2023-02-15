@@ -30,7 +30,7 @@ goConfig:
   ### Settings used for both modules and binaries:
   ## The location of the source code in your repository.
   ## Commands will be executed here.
-  sourceLocation: "./GoCI"
+  sourceLocation: "./.jfrog-pipelines/template-GoCI"
   ## This repository, if specified, must first be created in Artifactory.
   ## The resolver is used to resolve dependencies. It is recommended to
   ## use a remote repository so that any external dependencies will be cached
