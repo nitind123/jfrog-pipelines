@@ -3,7 +3,7 @@
 namePrefix: go_sample
  
 ## The name of your Artifactory integration
-artIntegration: myArtifactory
+artIntegration: myArtIntegration
  
 ##### Artifactory Build Info
 ## set this to `true` to publish builds
@@ -23,7 +23,7 @@ artIntegration: myArtifactory
 ##### Repository Details
 repo:
   path: jfrog/jfrog-pipelines-templates
-  gitIntegration: myGithub
+  gitIntegration: myGitIntegration
   branchPattern: "^main$"
  
 goConfig:
@@ -35,12 +35,12 @@ goConfig:
   ## The resolver is used to resolve dependencies. It is recommended to
   ## use a remote repository so that any external dependencies will be cached
   ## in your local Artifactory instance.
-  resolverRepo: anon-go-remote
+  resolverRepo: templates-go-remote
  
   ### Settings used only for GoBuild and GoPublishBinary:
   ## Required to use these steps, the repository to which to upload the binary.
   ## The repository must first be created in Artifactory.
-  binaryTargetRepository: anon-go-local
+  binaryTargetRepository: templates-go-local
   ## Here you specify any additional arguments to the command to execute
 
   command: "build -o $outputLocation/$outputFile"
@@ -50,6 +50,6 @@ goConfig:
   ### Settings used only for GoPublishModule:
   ## Required to use this step, the repository to which to upload the module.
   ## The repository must first be created in Artifactory.
-  moduleTargetRepository: anon-go-local
+  moduleTargetRepository: templates-go-local
   ## The version specified in the go-publish command.
   version: v1.0.${run_number}
