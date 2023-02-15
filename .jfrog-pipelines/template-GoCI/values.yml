@@ -1,6 +1,6 @@
 ## This string will prefix the resources and pipeline, allowing you to add
 ## the pipeline source multiple times with unique names.
-namePrefix: go_sample
+namePrefix: template
  
 ## The name of your Artifactory integration
 artIntegration: myArtIntegration
