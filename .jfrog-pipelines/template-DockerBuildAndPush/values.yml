@@ -24,7 +24,7 @@ DockerBuild:
 
 DockerPush:
   name: samplePush
-  targetRepository: docker-target-local
+  targetRepository: templates-target-local
 
 BuildInfo:
   autoPublishBuildInfo: true
