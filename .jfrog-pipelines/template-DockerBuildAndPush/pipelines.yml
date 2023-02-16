@@ -1,4 +1,4 @@
 valuesFilePath: ./values.yml
 
 include:
-  template: jfrog/DockerBuildA/1.0.0
+  template: jfrog/DockerBuildAndPush/1.0.0
