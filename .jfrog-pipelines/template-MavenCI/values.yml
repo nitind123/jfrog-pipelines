@@ -18,7 +18,7 @@ publishBuild: true
 
 ##### Repository Details
 repo:
-  path: org/repo
+  path: jfrog/jfrog-pipelines
   gitIntegration: myGitIntegration
   branchPattern: "^main$"
 
