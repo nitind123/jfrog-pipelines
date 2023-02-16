@@ -4,7 +4,7 @@
 namePrefix: mvn_template
 
 ## The name of your Artifactory integration
-artIntegration: myArtIntegrationName
+artIntegration: myArtIntegration
 
 ##### Artifactory Build Info
 ## set this to `true` to publish a build
