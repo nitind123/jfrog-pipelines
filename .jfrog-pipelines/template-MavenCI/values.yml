@@ -25,7 +25,7 @@ repo:
 ##### Maven configuration
 mavenConfig:
   ## Here you specify the command to execute
-  ## it is executed as `mvn {{ command }}`
+
   command: clean install
   sourceLocation: "template-MavenCI/sample-project"
   ## These repos must first be created in Artifactory.
