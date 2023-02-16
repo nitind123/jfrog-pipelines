@@ -27,7 +27,7 @@ mavenConfig:
   ## Here you specify the command to execute
 
   command: clean install
-  sourceLocation: "template-MavenCI/sample-project"
+  sourceLocation: "./.jfrog-pipelines/template-MavenCI/sample-project"
   ## These repos must first be created in Artifactory.
   ## resolver is used to resolve dependencies. It is recommended to
   ## use a remote repository so that any external dependencies will be cached
