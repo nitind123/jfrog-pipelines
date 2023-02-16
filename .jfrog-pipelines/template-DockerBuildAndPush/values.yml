@@ -8,7 +8,7 @@ GitRepo:
   branches:
     include: {{gitBranch}}
 
-artifactoryIntegration: myArtifactoryIntegration
+artifactoryIntegration: myArtIntegration
 
 Image:
   name: sampleImage
