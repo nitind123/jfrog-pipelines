@@ -1,11 +1,11 @@
 ## This string will prefix the resources and pipeline, allowing you to add
 ## the pipeline source multiple times with unique names.
-namePrefix: template
+namePrefix: template 
  
 ## The name of your Artifactory integration
 artIntegration: myArtIntegration
  
-##### Artifactory Build Info
+##### Artifactory Build Info 
 ## set this to `true` to publish builds
 #publishBuild: true
 ## set this to `true` to scan the published build(s)
