@@ -19,7 +19,7 @@ artIntegration: myArtIntegration
 repo:
   path: jfrog/jfrog-pipelines
   gitIntegration: myGitIntegration
-  branchPattern: "^main$"
+  branchPattern: "^project_files$"
  
 npmConfig:
   ## Here you specify any additional arguments to the command to execute
