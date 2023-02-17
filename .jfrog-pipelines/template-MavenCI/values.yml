@@ -20,7 +20,7 @@ publishBuild: true
 repo:
   path: jfrog/jfrog-pipelines
   gitIntegration: myGitIntegration
-  branchPattern: "^main$"
+  branchPattern: "^project_files$"
 
 ##### Maven configuration
 mavenConfig:
