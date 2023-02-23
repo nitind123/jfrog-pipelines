@@ -1,6 +1,9 @@
 # Npm CI Template
 This template will create a pipeline that showcases the features of the [NpmBuild](https://www.jfrog.com/confluence/display/JFROG/NpmBuild) and [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) native steps.
 
+## Live Example 
+Click [here](https://pipelines.jfrog.io/ui/pipelines/myPipelines/viewPipelines?projectKey=templates) to see this Global template in action.
+
 ## Features
 - building a NodeJS project and pushing the resulting artifacts to Artifactory
 - publishing an Artifactory build and updating an output [BuildInfo resource](https://www.jfrog.com/confluence/display/JFROG/BuildInfo)
