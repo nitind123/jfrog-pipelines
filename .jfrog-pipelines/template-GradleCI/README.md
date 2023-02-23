@@ -1,6 +1,9 @@
 # Gradle CI Template
 This template will create a pipeline that showcases the features of the [GradleBuild](https://www.jfrog.com/confluence/display/JFROG/GradleBuild) native step.
 
+## Live Example 
+Click [here](https://pipelines.jfrog.io/ui/pipelines/myPipelines/viewPipelines?projectKey=templates) to see this Global template in action.
+
 ## Features
 - building a Gradle project and pushing the resulting artifacts to Artifactory
 - publishing an Artifactory build and updating an output [BuildInfo resource](https://www.jfrog.com/confluence/display/JFROG/BuildInfo)
