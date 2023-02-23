@@ -1,7 +1,8 @@
 # Go CI Template
 This template will create a pipeline that showcases the features of the [GoBuild](https://www.jfrog.com/confluence/display/JFROG/GoBuild), [GoPublishBinary](https://www.jfrog.com/confluence/display/JFROG/GoPublishBinary), and [GoPublishModule](https://www.jfrog.com/confluence/display/JFROG/GoPublishModule) native steps, with the option to use just GoBuild and GoPublishBinary, just GoPublishModule, or all three.
 
-**Live Example**: Click [here](https://pipelines.jfrog.io/ui/pipelines/myPipelines/viewPipelines?projectKey=templates) to see this Global templates in action.
+## Live Example 
+Click [here](https://pipelines.jfrog.io/ui/pipelines/myPipelines/viewPipelines?projectKey=templates) to see this Global template in action.
 
 ## Features
 - building a Go project and pushing the resulting artifacts to Artifactory
