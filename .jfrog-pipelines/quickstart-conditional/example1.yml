@@ -37,7 +37,9 @@ pipelines:
             - printenv
       - name: step_CC
         type: Bash
-#         configuration:
+        configuration:
+          inputSteps:
+            - name: step_BB
         execution:
           onExecute:
             - echo "Executing step_CC"
@@ -59,6 +61,7 @@ pipelines:
           onExecute:
             - echo "Executing conditional_DD"
             - printenv
+            
   - name: Conditional_Pipeline_2
     steps:
       - name: step_A
