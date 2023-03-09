@@ -59,7 +59,7 @@ pipelines:
           onExecute:
             - echo "Executing conditional_DD"
             - printenv
-  - name: demo_conditional
+  - name: Conditional_Pipeline_2
     steps:
       - name: step_A
         type: Bash
