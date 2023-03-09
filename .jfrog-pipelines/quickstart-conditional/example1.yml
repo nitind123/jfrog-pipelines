@@ -1,0 +1,117 @@
+resources:
+  - name: script_conditional
+    type: GitRepo
+    configuration:
+      path: jfrog/jfrog-pipelines
+      gitProvider: myGithub
+      branches:
+        include: ^{{gitBranch}}$
+        
+  - name: resource1a
+    type: PropertyBag
+    configuration:
+      runNumber: 0        
+
+pipelines:
+  - name: Conditional_Pipeline_1
+    steps:
+      - name: step_AA
+        type: Bash
+        configuration:
+          inputResources:
+            - name: script_conditional
+        execution:
+          onExecute:
+            - echo "Executing step_B"
+            - printenv
+      - name: step_BB
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_AA
+              status:
+                - success
+        execution:
+          onExecute:
+            - echo "Executing step_B"
+            - printenv
+      - name: step_CC
+        type: Bash
+#         configuration:
+        execution:
+          onExecute:
+            - echo "Executing step_CC"
+            - printenv
+     
+      - name: conditional_DD
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_BB
+              status:
+                - success
+            - name: step_CC
+              status:
+                - failure
+                - skipped
+                - cancelled
+        execution:
+          onExecute:
+            - echo "Executing conditional_DD"
+            - printenv
+  - name: demo_conditional
+    steps:
+      - name: step_A
+        type: Bash
+        configuration:
+          inputResources:
+            - name: script_conditional
+          outputResources:
+            - name: resource1a           
+        execution:
+          onExecute:
+            - echo "Executing step_A"
+            - printenv
+     
+      - name: step_B
+        type: Bash
+        configuration:
+          #inputSteps:
+           # - name: step_A
+            #  status:
+             #   - success
+              #  - skipped
+          inputResources:
+            - name: resource1a
+              newVersionOnly: true               
+        execution:
+          onExecute:
+            - echo "Executing step_B"
+            - printenv
+            
+      - name: step_C
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_A
+            - name: step_B        
+        execution:
+          onExecute:
+            - echo "Executing step_C"
+            - printenv
+      #- name: conditional_D
+       # type: Bash
+        #configuration:
+         # inputSteps:
+          #  - name: step_B
+           #   status:
+            #    - success
+            #- name: step_C
+             # status:
+              #  - failure
+               # - skipped
+                #- cancelled
+        #execution:
+         # onExecute:
+          #  - echo "Executing conditional_D"
+           # - printenv
