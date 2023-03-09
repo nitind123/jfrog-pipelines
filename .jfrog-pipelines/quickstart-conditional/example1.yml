@@ -86,7 +86,7 @@ pipelines:
                 - skipped
           inputResources:
             - name: resource1a
-              newVersionOnly: true               
+              # newVersionOnly: true               
         execution:
           onExecute:
             - echo "Executing step_B"
