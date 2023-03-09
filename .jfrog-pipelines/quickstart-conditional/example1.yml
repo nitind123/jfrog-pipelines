@@ -79,11 +79,11 @@ pipelines:
       - name: step_B
         type: Bash
         configuration:
-          #inputSteps:
-           # - name: step_A
-            #  status:
-             #   - success
-              #  - skipped
+          inputSteps:
+            - name: step_A
+              status:
+                - success
+                - skipped
           inputResources:
             - name: resource1a
               newVersionOnly: true               
@@ -102,19 +102,20 @@ pipelines:
           onExecute:
             - echo "Executing step_C"
             - printenv
-      #- name: conditional_D
-       # type: Bash
-        #configuration:
-         # inputSteps:
-          #  - name: step_B
-           #   status:
-            #    - success
-            #- name: step_C
-             # status:
-              #  - failure
-               # - skipped
-                #- cancelled
-        #execution:
-         # onExecute:
-          #  - echo "Executing conditional_D"
-           # - printenv
+            
+      - name: conditional_D
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_B
+              status:
+                - success
+            - name: step_C
+              status:
+                - failure
+                - skipped
+                - cancelled
+        execution:
+          onExecute:
+            - echo "Executing conditional_D"
+            - printenv
