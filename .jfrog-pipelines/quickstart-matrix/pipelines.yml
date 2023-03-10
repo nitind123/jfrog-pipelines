@@ -45,7 +45,7 @@ pipelines:
         execution:
           onExecute:
             - echo "Preparing the code base"
-            - pushd "${res_matrix_repo_resourcePath}/./.jfrog-pipelines/quickstart-matrix/app"
+            - pushd "${res_matrix_repo_resourcePath}/quickstart-matrix/app"
             - npm install
             - popd
             - mkdir -p app
