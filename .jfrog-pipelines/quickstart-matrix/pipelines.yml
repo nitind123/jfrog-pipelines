@@ -1,0 +1,96 @@
+template: true   # required for local templates
+valuesFilePath: ./values.yml
+
+resources:
+  - name: matrix_repo
+    type: GitRepo
+    configuration:
+      path: {{ .Values.repoPath }}      # Change to your own path
+      branches:
+        include: ^master$
+      gitProvider: {{ .Values.gitProvider }}        # Change to your own GitHub integration name
+
+pipelines:
+  - name: matrix_single_dimension_pipeline
+    steps:
+      - name: matrix_step
+        type: Matrix
+        stepMode: Bash
+        configuration:
+          inputResources:
+            - name: matrix_repo
+        stepletMultipliers:
+          environmentVariables:             # Sets of environment variables for steplets
+            - animal:    dog                # - Set 1
+              mineral:   copper
+              vegetable: carrot
+            - animal:    goat               # - Set 2
+              mineral:   iron
+              vegetable: broccoli
+            - animal:    lizard             # - Set 3
+              mineral:   lead
+
+        execution:
+          onExecute:
+            - echo "Executing matrix step on ${steplet_id}"
+            - echo "Variation animal = ${animal}, mineral = ${mineral}, vegetable = ${vegetable}"
+
+  - name: matrix_two_dimension_pipeline
+    steps:
+      - name: setup
+        type: PreMatrix
+        configuration:
+          inputResources:
+            - name: matrix_repo
+        execution:
+          onExecute:
+            - echo "Preparing the code base"
+            - pushd "${res_matrix_repo_resourcePath}/app"
+            - npm install
+            - popd
+            - mkdir -p app
+            - cp -r "${res_matrix_repo_resourcePath}/app/." ./app/
+
+      - name: test
+        type: Matrix
+        stepMode: Bash
+        configuration:
+          inputSteps:
+            - name: setup
+        stepletMultipliers:
+          environmentVariables:
+            - module: mod_1
+            - module: mod_2
+            - module: mod_3
+            - module: mod_4
+          runtimes:
+            - type: image
+              image:
+                auto:
+                  language: node
+                  versions:
+                    - 12
+            - type: image
+              image:
+                auto:
+                  language: node
+                  versions:
+                    - 8.17.0
+        execution:
+          onExecute:
+            - pushd ./setup/app
+            - MODULE="$module" npm run test
+            - popd
+          onComplete:
+            - save_tests ./setup/app/reports
+
+      - name: output
+        type: PostMatrix
+        configuration:
+          inputSteps:
+            - name: test
+        execution:
+          onExecute:
+            - echo "Executing the output step"
+            - ls -ltr ./test/setup/app/reports
+            - save_tests ./test/setup/app/reports
