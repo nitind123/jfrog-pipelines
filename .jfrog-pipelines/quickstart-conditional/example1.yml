@@ -75,6 +75,7 @@ pipelines:
         configuration:
           inputResources:
             - name: script_conditional
+            - name: cron_trigger
           outputResources:
             - name: resource1a           
         execution:
