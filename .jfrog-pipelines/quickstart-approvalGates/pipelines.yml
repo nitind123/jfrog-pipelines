@@ -18,6 +18,11 @@ resources:
     configuration:
       commitSha: 1
       runID: 1
+      
+  - name: cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: '0 1 * * *'       
 
 pipelines:
   - name: Approval_Gates_Pipeline
@@ -50,7 +55,8 @@ pipelines:
               default: value1            
               description: this is step env3 description
               allowCustom: false              
-          #inputResources:
+          inputResources:
+            - name: cron_trigger
             # Sets up step to be triggered when there are commit events to myFirstRepo
             #- name: myFirstRepo1
         execution:
