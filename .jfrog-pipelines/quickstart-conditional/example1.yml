@@ -10,7 +10,12 @@ resources:
   - name: resource1a
     type: PropertyBag
     configuration:
-      runNumber: 0        
+      runNumber: 0
+      
+  - name: cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: '0 1 * * *'       
 
 pipelines:
   - name: Conditional_Pipeline_1
@@ -20,6 +25,7 @@ pipelines:
         configuration:
           inputResources:
             - name: script_conditional
+            - name: cron_trigger
         execution:
           onExecute:
             - echo "Executing step_B"
