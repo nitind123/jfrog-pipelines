@@ -12,7 +12,7 @@ resources:
     configuration:
       runNumber: 0
       
-  - name: cron_trigger
+  - name: cron_trigger_con1
     type: CronTrigger
     configuration:
       interval: '0 1 * * *'       
@@ -25,7 +25,7 @@ pipelines:
         configuration:
           inputResources:
             - name: script_conditional
-            - name: cron_trigger
+            - name: cron_trigger_con1
         execution:
           onExecute:
             - echo "Executing step_B"
@@ -75,7 +75,7 @@ pipelines:
         configuration:
           inputResources:
             - name: script_conditional
-            - name: cron_trigger
+            - name: cron_trigger_con1
           outputResources:
             - name: resource1a           
         execution:
