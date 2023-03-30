@@ -55,8 +55,8 @@ pipelines:
               default: value1            
               description: this is step env3 description
               allowCustom: false              
-          inputResources:
-            - name: cron_trigger_approval
+          #inputResources:
+            #- name: cron_trigger_approval
             # Sets up step to be triggered when there are commit events to myFirstRepo
             #- name: myFirstRepo1
         execution:
