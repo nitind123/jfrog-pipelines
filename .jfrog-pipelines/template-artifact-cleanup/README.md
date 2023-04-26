@@ -1,6 +1,6 @@
 # JFrog Pipelines - Artifacts Cleanup Sample
 
-[![Artifacts Cleanup](https://pipelines.jfrog.io/pipelines/api/v1/badges/project/templates/pipelines/artifact_cleanup?text=JFrogPipelines)](https://pipelines.jfrog.io/pipelines/api/v1/badges/project/templates/pipelines/artifact_cleanup?text=JFrogPipelines)
+[![Artifacts Cleanup](https://pipelines.jfrog.io/pipelines/api/v1/badges/project/templates/pipelines/artifact_cleanup?text=JFrogPipelines)](https://pipelines.jfrog.io/ui/pipelines/myPipelines/Templates/artifact_cleanup?projectKey=templates)
 
 
 This pipeline uses a system template called `Artifact Cleanup Template`. More details about the template can be found [here](../../templates/artifactory/cleanup/artifact-cleanup/README.md).
