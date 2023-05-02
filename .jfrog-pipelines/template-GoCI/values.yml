@@ -22,7 +22,7 @@ artIntegration: myArtIntegration
  
 ##### Repository Details
 repo:
-  path: jfrog/jfrog-pipelines
+  path: nitind123/jfrog-pipelines
   gitIntegration: myGitIntegration
   branchPattern: "^project_files$"
  
