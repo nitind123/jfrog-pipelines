@@ -15,16 +15,16 @@ Image:
   sourceRepository: foo
   autoPull: false
 
-DockerBuild:
-  name: sampleBuild
-  dockerImageName: pipelines.jfrog.io/templates-docker-local/dbp
-  dockerFileName: Dockerfile
-  dockerFileLocation: './.jfrog-pipelines/template-DockerBuildAndPush'
-  dockerImageTag: ${run_number}
+# DockerBuild:
+#   name: sampleBuild
+#   dockerImageName: pipelines.jfrog.io/templates-docker-local/dbp
+#   dockerFileName: Dockerfile
+#   dockerFileLocation: './.jfrog-pipelines/template-DockerBuildAndPush'
+#   dockerImageTag: ${run_number}
 
-DockerPush:
-  name: samplePush
-  targetRepository: templates-target-local
+# DockerPush:
+#   name: samplePush
+#   targetRepository: templates-target-local
 
 BuildInfo:
   autoPublishBuildInfo: true
