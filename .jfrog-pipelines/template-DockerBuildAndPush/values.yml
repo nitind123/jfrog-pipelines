@@ -4,7 +4,7 @@ Pipeline:
 GitRepo:
   name: sampleRepo
   gitProvider: myGitIntegration
-  path: jfrog/jfrog-pipelines
+  path: nitind123/jfrog-pipelines
   branches:
     include: {{gitBranch}}
 
